@@ -51,7 +51,7 @@ const characterAI = async message => {
 
 const igStalk = async (message, args) => {
     	const iguser = args[0];
-	const igresp = await axios.get(`https://skizo.tech/api/igstalk?apikey=${process.env.skizo}&user=${iguser}`);
+	const igresp = await axios.get(`https://skizo.tech/api/igstalk?apikey=${process.env.SKIZO}&user=${iguser}`);
 	const userdata = igresp.data
 	if(userdata.username === "") return message.reply('usernya gada/private account');
 
