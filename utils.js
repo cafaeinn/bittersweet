@@ -40,7 +40,7 @@ const characterAI = async message => {
 
 	try {
 		message.channel.sendTyping();
-		let resp = await axios.get(`https://skizo.tech/api/cai/chat?apikey=${process.env.skizo}&characterId=${process.env.charId}&text=${prompt}&sessionId=${userSessions[userId].sesId}&token=${process.env.charToken}`);
+		let resp = await axios.get(`https://skizo.tech/api/cai/chat?apikey=${process.env.SKIZO}&characterId=${process.env.CHARID}&text=${prompt}&sessionId=${userSessions[userId].sesId}&token=${process.env.CHARTOKEN}`);
 		const { data } = resp;
 		const get = data.result;
 		const reply = get.text;
@@ -114,7 +114,7 @@ const ttdl = async(message, args) => {
 	const ttValid = /^https?:\/\/(www\.)?(tiktok\.com|vt\.tiktok\.com)\/(?:@[\w\.]+\/video\/\d+|[\w\.]+\/video\/\d+|video\/\d+|[\w\.]+|@[\w\.]+|[A-Za-z0-9]+)(\/)?(\?.*)?$/;
 
 	if(ttValid.test(ttURL) === true) {
-	const res = await axios.get(`https://skizo.tech/api/tiktok?apikey=${process.env.skizo}&url=${ttURL}`);
+	const res = await axios.get(`https://skizo.tech/api/tiktok?apikey=${process.env.SKIZO}&url=${ttURL}`);
 	message.reply({
 		files: [{
 			attachment: res.data.data.hdplay,
@@ -131,7 +131,7 @@ const instadl = async(message, args) => {
 	const instaValid = /^https?:\/\/(?:www\.)?instagram\.com\/(?:p\/[\w-]+|reel\/[\w-]+)(?:\/\?.*)?$/;
 
 	if(instaValid.test(instaURL) === true) {
-	const res = await axios.get(`https://skizo.tech/api/instagram?apikey=${process.env.skizo}&url=${instaURL}`);
+	const res = await axios.get(`https://skizo.tech/api/instagram?apikey=${process.env.SKIZO}&url=${instaURL}`);
 	for(let i = 0; i < res.data.length; i++) {
 		message.reply({
 			files: [{
