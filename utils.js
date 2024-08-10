@@ -117,7 +117,7 @@ const ttdl = async(message, args) => {
 	const res = await axios.get(`https://skizo.tech/api/tiktok?apikey=${process.env.SKIZO}&url=${ttURL}`);
 	message.reply({
 		files: [{
-			attachment: res.data.data.hdplay,
+			attachment: res.data.data.play,
 			name: 'donglot.mp4',
 		}]
 	});
