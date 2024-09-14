@@ -34,7 +34,8 @@ client.on('messageCreate', async (message) => {
 		message.channel.id !== "1270930331645644800" &&//1270930331645644800 AWP
 		message.channel.id !== "1270985458565775504" && //chillin
 		message.channel.id !== "1271004304345534534" &&//pii
-		message.channel.id !== "1267390785725403238" //shiro
+		message.channel.id !== "1267390785725403238" &&//shiro
+		message.channel.id !== "1284484253408690228" //skibidj
 	) return;
 	if(
 		message.author.id === "444052085927837720"
