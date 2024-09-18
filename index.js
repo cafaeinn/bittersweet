@@ -39,7 +39,7 @@ client.on('messageCreate', async (message) => {
 		message.channel.id !== '1285971919082098760' //lize
 	) return;
 	if(
-		message.author.id === "444052085927837720"
+		message.author.id === "444052085927837720" //jawar
 	) return message.reply("km dibanned");
 	const regex = /\b(?:https?|ftp):\/\/(?:www\.)?[\w\-]+\.[\w\-]+(?:\.[\w\-]+)*(?:\/[\w\-.,@?^=%&:/~+#]*)?\b/;
 	if(regex.test(message.content) === true) return message.reply('jangan ngirim link');
@@ -54,11 +54,11 @@ client.on('messageCreate', async (message) => {
 client.on(Events.MessageCreate, async message => {
 	if(message.author.bot) return;
 	if(
-		message.channel.id !== '1268534290703061034' ||
+		message.channel.id !== '1268534290703061034' &&
 		message.channel.id !== '1285977447438880910'
 	) return;
 
-	util.characterAI(message);
+	await util.characterAI(message);
 })
 
 /**
