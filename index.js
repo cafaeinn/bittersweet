@@ -53,7 +53,10 @@ client.on('messageCreate', async (message) => {
 
 client.on(Events.MessageCreate, async message => {
 	if(message.author.bot) return;
-	if(message.channel.id !== '1268534290703061034') return;
+	if(
+		message.channel.id !== '1268534290703061034' &&
+		message.channel.id !== '1285977447438880910'
+	) return;
 
 	util.characterAI(message);
 })
