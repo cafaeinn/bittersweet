@@ -121,7 +121,7 @@ const ttdl = async(message, args) => {
 	message.reply({
 		files: [{
 			attachment: res.data.data.play,
-			name: 'donglot.mp4',
+			name: 'donglot.webp',
 		}]
 	});
 	} else if(ttValid.test(ttURL) === false) {
@@ -139,7 +139,7 @@ const instadl = async(message, args) => {
 		message.reply({
 			files: [{
 				attachment: res.data[i].url,
-				name: 'donglot.mp4'
+				name: 'donglot.webp'
 			}]
 		});
 	}
